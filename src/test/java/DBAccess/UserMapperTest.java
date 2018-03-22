@@ -45,9 +45,9 @@ public class UserMapperTest {
             }
             // reset test database
             try ( Statement stmt = testConnection.createStatement() ) {
-                stmt.execute( "drop table if exists Users" );
-                stmt.execute( "create table Users like UsersTest" );
-                stmt.execute( "insert into Users select * from UsersTest" );
+                stmt.execute( "drop table if exists users" );
+                stmt.execute( "create table users like UsersTest" );
+                stmt.execute( "insert into users select * from UsersTest" );
             }
 
         } catch ( ClassNotFoundException | SQLException ex ) {
