@@ -16,7 +16,7 @@
         You are now logged in as a customer of our wonderful site.
         
         </div>
-    <form action="FrontController" name="shop" method="POST">
+    <form style="padding: 5px" action="FrontController" name="shop" method="POST">
         <input type="hidden" name="command" value="shop">
         <div>
             <label for="len>"Length>Length</label>
@@ -32,9 +32,9 @@
         </div>
         <input type="submit"  value="Submit">
     </form>
-        <form action="FrontController" name="getOrder" method="POST">
+        <form style="padding: 5px" action="FrontController" name="getOrder" method="POST">
             <input type="hidden" name="command" value="getOrder">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Order list">
         </form>
             
                
