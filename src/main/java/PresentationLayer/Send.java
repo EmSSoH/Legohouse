@@ -9,7 +9,6 @@ import FunctionLayer.BrickCal;
 import FunctionLayer.LogicFacade;
 import FunctionLayer.Order;
 import FunctionLayer.UniversalException;
-import FunctionLayer.User;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,23 +18,25 @@ import javax.servlet.http.HttpSession;
  *
  * @author Magnus West Madsen
  */
-public class GetOrder extends Command {
-
+public class Send extends Command{
+    
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws UniversalException {
         
         HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
-        List<Order> orders = LogicFacade.getUsersOrders(user);
+        int orderId = Integer.parseInt(request.getParameter("orderId"));
+        boolean success = LogicFacade.updateStatus(orderId);
+        
+        List<Order> orders = LogicFacade.getAllOrders();
         for(Order o : orders){
             BrickCal.calcualt(o);
         }
-        session.setAttribute("orders", orders);
+        session.setAttribute("allOrders", orders);
         
-            if (orders == null) {
-                throw new UniversalException("Could not fetch orders");
-            } else {
-            return "customerorderpage";
+        if (success) {
+            return "employeeorderpage";
+        } else {
+            throw new UniversalException("Failed to send");
         }
     }
 }

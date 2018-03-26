@@ -18,6 +18,9 @@ public class Order {
     private int height;
     private int userId;
     private String status;
+    private int brick1;
+    private int brick2;
+    private int brick4;
 
     public Order(int length, int width, int height, int userId) {
         this.length = length;
@@ -63,4 +66,30 @@ public class Order {
     public void setId(int id) {
         this.id = id;
     }
+
+    public int getBrick1() {
+        return brick1;
+    }
+
+    public int getBrick2() {
+        return brick2;
+    }
+
+    public int getBrick4() {
+        return brick4;
+    }
+
+    public void setBrick1(int brick1) {
+        this.brick1 = brick1;
+    }
+
+    public void setBrick2(int brick2) {
+        this.brick2 = brick2;
+    }
+
+    public void setBrick4(int brick4) {
+        this.brick4 = brick4;
+    }
+    
+    
 }

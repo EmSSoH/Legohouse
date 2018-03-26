@@ -38,4 +38,8 @@ public class LogicFacade {
         return success;
     }
     
+    
+    public static void BrickCal(Order order) throws UniversalException {
+        BrickCal.calcualt(order);
+    }
 }

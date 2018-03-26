@@ -15,5 +15,12 @@
         
         <h1>Hello <%=request.getParameter( "email")%> </h1>
         You are now logged in as a EMPLOYEE of our wonderful site.
+        
+        
+        <form style="padding: 5px" action="FrontController" name="empOrder" method="POST">
+            <input type="hidden" name="command" value="empOrder">
+            <input type="submit" value="Employee Order list">
+        </form>
+        
     </body>
 </html>
