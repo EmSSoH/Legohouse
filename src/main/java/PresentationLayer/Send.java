@@ -25,7 +25,7 @@ public class Send extends Command{
         
         HttpSession session = request.getSession();
         int orderId = Integer.parseInt(request.getParameter("orderId"));
-        boolean success = LogicFacade.updateStatus(orderId);
+        boolean success = LogicFacade.send(orderId);
         
         List<Order> orders = LogicFacade.getAllOrders();
         for(Order o : orders){

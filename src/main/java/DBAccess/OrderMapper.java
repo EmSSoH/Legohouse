@@ -87,7 +87,7 @@ public class OrderMapper {
         return orders;
     }
 
-    public static boolean updateStatus(int orderId) throws UniversalException {
+    public static boolean send(int orderId) throws UniversalException {
         boolean changedLines;
         try {
             Connection con = Connector.connection();

@@ -33,8 +33,8 @@ public class LogicFacade {
         return OrderMapper.getAllOrders();
     }
 
-    public static boolean updateStatus(int orderId) throws UniversalException {
-        boolean success = OrderMapper.updateStatus(orderId);
+    public static boolean send(int orderId) throws UniversalException {
+        boolean success = OrderMapper.send(orderId);
         return success;
     }
     
